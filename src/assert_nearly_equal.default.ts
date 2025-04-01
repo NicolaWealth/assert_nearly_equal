@@ -1,4 +1,4 @@
-import * as assert from "assert";
+import assert from "assert";
 
 export const assertNearlyEqual = (actual: number, expected: number, msg: string, epsilon = 0.000001) => {
   let delta = actual - expected;

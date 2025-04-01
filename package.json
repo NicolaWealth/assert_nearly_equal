@@ -46,11 +46,16 @@
     "node": "^22"
   },
   "dependencies": {
+    "assert": "^2.1.0"
   },
   "devDependencies": {
+    "@types/esrever": "^0",
+    "@types/json-stable-stringify": "^1",
+    "@types/lodash.isequal": "^4",
     "@types/mocha": "^9",
     "@types/node": "^22",
     "@types/sinon": "^10",
+    "@types/xxhashjs": "^0",
     "@typescript-eslint/eslint-plugin": "^8",
     "eslint": "^9",
     "eslint-config-turbo": "^2",
@@ -61,6 +66,9 @@
     "sinon": "^19",
     "ts-node": "^10",
     "typescript": "^5"
+  },
+  "browser": {
+    "assert": false
   },
   "packageManager": "npm@10.9.0"
 }
