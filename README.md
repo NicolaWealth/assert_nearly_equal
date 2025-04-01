@@ -1,5 +1,5 @@
-![Tests Passing](https://github.com/NicolaWealth/[PACKAGE_NAME]/actions/workflows/autoTestMainBadge.yml/badge.svg)
-![Code Cov](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fgithub.com%2Fnicolawealth%2F[PACKAGE_NAME]%2Fraw%2Fmain%2Fcodecov/badge.json&query=%24.message&label=Code%20Coverage&color=%24.color)
+![Tests Passing](https://github.com/NicolaWealth/assert_nearly_equal/actions/workflows/autoTestMainBadge.yml/badge.svg)
+![Code Cov](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fgithub.com%2Fnicolawealth%2Fassert_nearly_equal%2Fraw%2Fmain%2Fcodecov/badge.json&query=%24.message&label=Code%20Coverage&color=%24.color)
 
 # Introduction
 Brief intro to the purpose of the package.
