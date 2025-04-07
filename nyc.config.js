@@ -6,7 +6,7 @@ module.exports = {
   "cache": false,
   "extension": [".ts"],
   "include": [
-    "src/**/*.ts",
+    "**/*.default.ts",
   ],
   "exclude": [
     "**/*_sql.ts",
@@ -17,7 +17,6 @@ module.exports = {
     "**/*.test_*.tsx",
     "**/*.type.ts",
     "**/*.provider.ts",
-    "**/*.default.ts",
     "**/*.default.tsx",
     "**/bootstrap.ts",
     "**/index.ts",
