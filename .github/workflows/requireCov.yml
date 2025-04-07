@@ -34,4 +34,3 @@ jobs:
           else
             echo "Assertion passed: Coverage is 100%"
           fi
-          
