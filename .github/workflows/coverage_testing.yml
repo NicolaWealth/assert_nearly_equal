@@ -28,7 +28,16 @@ jobs:
       - name: Run coverage extraction script
         id: extract_coverage
         run: |
-          COVERAGE=$(node codecov/extract_coverage.js)
+          COVERAGE=$(
+          node -e "
+          const fs = require('fs');
+          const { extractCoverage } = require('@nicolawealth/code_coverage_extractor');
+          const coverageData = JSON.parse(fs.readFileSync('./coverage/coverage-final.json', 'utf-8'))
+          const result = extractCoverage(coverageData, './codecov/badge.json');
+          console.log(result);
+          ")
+          COVERAGE=$(echo $COVERAGE | xargs)
+          echo "COVERAGE=$COVERAGE" >> $GITHUB_ENV
 
       - name: Print Coverage Value
         run: |
@@ -40,7 +49,7 @@ jobs:
           git config --global user.name "skyehaik"
 
       - name: Mark the repository as safe
-        run: git config --global --add safe.directory /__w/base64_url/base64_url
+        run: git config --global --add safe.directory /__w/assert_nearly_equal/assert_nearly_equal
 
       - name: Verify remote URL
         run: |

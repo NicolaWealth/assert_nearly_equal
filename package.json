@@ -49,6 +49,7 @@
     "assert": "^2.1.0"
   },
   "devDependencies": {
+    "@nicolawealth/code_coverage_extractor": "^2",
     "@types/esrever": "^0",
     "@types/json-stable-stringify": "^1",
     "@types/lodash.isequal": "^4",
