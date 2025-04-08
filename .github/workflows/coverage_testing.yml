@@ -40,7 +40,7 @@ jobs:
           git config --global user.name "skyehaik"
 
       - name: Mark the repository as safe
-        run: git config --global --add safe.directory /__w/assert_nearly_equal/assert_nearly_equal
+        run: git config --global --add safe.directory /__w/base64_url/base64_url
 
       - name: Verify remote URL
         run: |
