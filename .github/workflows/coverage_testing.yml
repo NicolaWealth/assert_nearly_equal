@@ -1,4 +1,3 @@
-
 name: Automatic Coverage Reporting Upon Merge
 on:
   push:
