@@ -32,8 +32,8 @@
   ],
   "license": "MIT",
   "scripts": {
-    "clean": "rm -rf dist/* && rm -f tsconfig.tsbuildinfo",
-    "build": "microbundle --format umd",
+    "clean": "rm -rf dist/* && rm -f tsconfig.tsbuildinfo tsconfig.cjs.tsbuildinfo tsconfig.types.tsbuildinfo",
+    "build": "tsc -p tsconfig.cjs.json && tsc -p tsconfig.types.json && microbundle --entry dist/index.js --format umd --output dist --no-generateTypes",
     "rename:esm": "/bin/zsh ./scripts/fix-mjs.sh",
     "lint": "eslint src",
     "test": "mocha",
@@ -43,7 +43,7 @@
     "doc": "npx typedoc src/*.ts src/**/*.ts --out dist/doc"
   },
   "engines": {
-    "node": ">=22"
+    "node": ">=22.12.0"
   },
   "dependencies": {
     "assert": "^2.1.0"
@@ -53,20 +53,22 @@
     "@types/esrever": "^0",
     "@types/json-stable-stringify": "^1",
     "@types/lodash.isequal": "^4",
-    "@types/mocha": "^9",
+    "@types/mocha": "^10.0.10",
     "@types/node": "^22",
-    "@types/sinon": "^10",
+    "@types/sinon": "^22.0.0",
     "@types/xxhashjs": "^0",
     "@typescript-eslint/eslint-plugin": "^8",
     "eslint": "^9",
     "eslint-config-turbo": "^2",
     "microbundle": "^0.15.1",
-    "mocha": "^10",
-    "mocha-junit-reporter": "^2",
-    "nyc": "^15",
-    "sinon": "^19",
+    "mocha": "^12",
+    "nyc": "^18",
+    "sinon": "^22",
     "ts-node": "^10",
-    "typescript": "^5"
+    "typescript": "^4.9.5"
+  },
+  "overrides": {
+    "serialize-javascript": "^7.0.5"
   },
   "browser": {
     "assert": false
