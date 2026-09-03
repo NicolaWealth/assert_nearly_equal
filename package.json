@@ -33,7 +33,7 @@
   "license": "MIT",
   "scripts": {
     "clean": "rm -rf dist/* && rm -f tsconfig.tsbuildinfo",
-    "build": "microbundle --format umd",
+    "build": "tsc -p tsconfig.cjs.json && tsc -p tsconfig.types.json && microbundle --entry dist/index.js --format umd --output dist --no-generateTypes",
     "rename:esm": "/bin/zsh ./scripts/fix-mjs.sh",
     "lint": "eslint src",
     "test": "mocha",
@@ -66,11 +66,10 @@
     "nyc": "^15",
     "sinon": "^19",
     "ts-node": "^10",
-    "typescript": "^5"
+    "typescript": "^4.9.5"
   },
   "overrides": {
     "diff": "^8.0.2",
-    "minimatch": "^9.0.7",
     "serialize-javascript": "^7.0.5",
     "uuid": "^11.1.1"
   },
