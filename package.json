@@ -32,7 +32,7 @@
   ],
   "license": "MIT",
   "scripts": {
-    "clean": "rm -rf dist/* && rm -f tsconfig.tsbuildinfo",
+    "clean": "rm -rf dist/* && rm -f tsconfig.tsbuildinfo tsconfig.cjs.tsbuildinfo tsconfig.types.tsbuildinfo",
     "build": "tsc -p tsconfig.cjs.json && tsc -p tsconfig.types.json && microbundle --entry dist/index.js --format umd --output dist --no-generateTypes",
     "rename:esm": "/bin/zsh ./scripts/fix-mjs.sh",
     "lint": "eslint src",
@@ -61,17 +61,15 @@
     "eslint": "^9",
     "eslint-config-turbo": "^2",
     "microbundle": "^0.15.1",
-    "mocha": "^10",
+    "mocha": "^12",
     "mocha-junit-reporter": "^2",
-    "nyc": "^15",
-    "sinon": "^19",
+    "nyc": "^18",
+    "sinon": "^22",
     "ts-node": "^10",
     "typescript": "^4.9.5"
   },
   "overrides": {
-    "diff": "^8.0.2",
-    "serialize-javascript": "^7.0.5",
-    "uuid": "^11.1.1"
+    "serialize-javascript": "^7.0.5"
   },
   "browser": {
     "assert": false
