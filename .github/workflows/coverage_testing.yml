@@ -6,7 +6,6 @@ on:
 
 permissions:
   contents: write
-  pull-requests: write
   
 jobs:
   test:
@@ -17,10 +16,9 @@ jobs:
       image: node:22
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         with:
-          token: ${{ secrets.PAT }}
-          node-version: 22
+          persist-credentials: true
       - run: npm ci
       - run: npm run cover:report
 
@@ -46,15 +44,6 @@ jobs:
         run: |
           git config --global user.email "software@nicolawealth.com"
           git config --global user.name "actlion"
-
-      - name: Mark the repository as safe
-        run: git config --global --add safe.directory /__w/assert_nearly_equal/assert_nearly_equal
-
-      - name: Verify remote URL
-        run: |
-          git remote set-url origin https://x-access-token:${{ secrets.PAT }}@github.com/${{ github.repository }}.git
-          echo "Current remote URL:"
-          git remote -v
 
       - name: Push changes to main
         run: |
